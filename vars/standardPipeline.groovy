@@ -1,5 +1,6 @@
 def call(body) {
     def config = [:]
+    def pipe = new org.eceuropa.ssk.v1.Pipeline()
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
