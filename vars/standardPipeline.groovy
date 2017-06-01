@@ -10,7 +10,9 @@ def call(body) {
     node {
 	// Clean workspace before doing anything
         deleteDir()
-
+        checkout scm
+        sh "composer update --no-interaction --no-suggest"
+        sh "mkdir -p ${env.WORKSPACE}/platform"
 
         // Set some variables.
         def buildId = sh(returnStdout: true, script: 'date |  md5sum | head -c 5').trim()
