@@ -2,6 +2,8 @@
 
 def call(body) {
 
+    wrap([$class: 'AnsiColorBuildWrapper', cxolorMapName: 'xterm']) {
+
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
@@ -61,9 +63,10 @@ def call(body) {
                 slackSend color: "danger", message: "Subsite build ${buildLink} failed."
                 throw(err)
             } finally {
-                //sh "docker-compose -f ${WORKSPACE}/vendor/ec-europa/ssk/resources/docker/docker-compose.yml down"
+                sh "docker-compose -f ${WORKSPACE}/vendor/ec-europa/ssk/resources/docker/docker-compose.yml down"
             }
         }
+    }
     }
 }
 
