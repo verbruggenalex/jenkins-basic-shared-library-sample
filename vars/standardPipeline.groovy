@@ -1,6 +1,5 @@
 def call(body) {
     def config = [:]
-    def pipe = new eceuropa.ssk.v1.Pipeline()
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
@@ -14,6 +13,7 @@ def call(body) {
 	                checkout scm
 	        }
 	        stage ('Build') {
+                        def pipe = new org.eceuropa.ssk.v1.Pipeline()
                         pipe.execute()
 	                sh "echo 'building ${config.projectName} ...'"
 	        }
