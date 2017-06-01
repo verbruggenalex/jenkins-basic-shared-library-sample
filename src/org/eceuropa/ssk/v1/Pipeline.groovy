@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-package org.ec-europa.ssk.v1;
+package org.eceuropa.ssk.v1;
 
 def prepare() {
     node {

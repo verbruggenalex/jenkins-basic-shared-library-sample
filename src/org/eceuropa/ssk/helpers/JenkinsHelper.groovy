@@ -1,4 +1,4 @@
-package org.ec-europa.ssk.helpers
+package org.eceuropa.ssk.helpers
 
 import com.cloudbees.groovy.cps.NonCPS
 import org.jenkinsci.plugins.workflow.steps.FlowInterruptedException

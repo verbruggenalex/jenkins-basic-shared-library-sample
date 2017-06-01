@@ -1,4 +1,4 @@
-package org.ec-europa.ssk.helpers
+package org.eceuropa.ssk.helpers
 
 class Slack implements Serializable {
     def script
