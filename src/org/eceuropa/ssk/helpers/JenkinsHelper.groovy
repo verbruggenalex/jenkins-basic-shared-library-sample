@@ -1,3 +1,5 @@
+#!/usr/bin/groovy
+
 package org.eceuropa.ssk.helpers
 
 import com.cloudbees.groovy.cps.NonCPS

@@ -1,3 +1,5 @@
+#!/usr/bin/groovy
+
 package org.eceuropa.ssk.helpers
 
 class Slack implements Serializable {

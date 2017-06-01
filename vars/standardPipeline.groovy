@@ -1,3 +1,5 @@
+#!/usr/bin/groovy
+
 def call(body) {
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
