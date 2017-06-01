@@ -2,14 +2,15 @@
 
 def call(body) {
 
-    wrap([$class: 'AnsiColorBuildWrapper', cxolorMapName: 'xterm']) {
-
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
 
     node {
+
+        wrap([$class: 'AnsiColorBuildWrapper', cxolorMapName: 'xterm']) {
+
 	// Clean workspace before doing anything
         deleteDir()
         checkout scm
@@ -66,7 +67,7 @@ def call(body) {
                 sh "docker-compose -f ${WORKSPACE}/vendor/ec-europa/ssk/resources/docker/docker-compose.yml down"
             }
         }
-    }
+        }
     }
 }
 
