@@ -15,7 +15,7 @@ def call(body) {
 	                checkout scm
 	        }
 	        stage ('Build') {
-                        def pipe = new org.eceuropa.ssk.v1.Pipeline()
+                        def pipe = Pipeline()
                         pipe.execute()
 	                sh "echo 'building ${config.projectName} ...'"
 	        }
