@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 package org.eceuropa.ssk.v1;
 
 

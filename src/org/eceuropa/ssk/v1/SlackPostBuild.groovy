@@ -1,7 +1,4 @@
-#!/usr/bin/env groovy
-
 package org.eceuropa.ssk.v1;
-
 
 def execute(){
     def status = buildResultIsStillGood() ? 'good' : 'danger'
