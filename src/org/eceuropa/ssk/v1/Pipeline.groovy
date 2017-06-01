@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 package org.eceuropa.ssk.v1;
 
 def prepare() {
@@ -41,4 +39,3 @@ def execute() {
 }
 
 return this;
-
