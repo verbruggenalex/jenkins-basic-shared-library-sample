@@ -11,10 +11,11 @@ def call(body) {
 
 	    try {
 	        stage ('Clone') {
-	        	checkout scm
+	                checkout scm
 	        }
 	        stage ('Build') {
-	        	sh "echo 'building ${config.projectName} ...'"
+                        pipe.execute()
+	                sh "echo 'building ${config.projectName} ...'"
 	        }
 	        stage ('Tests') {
 		        parallel 'static': {
@@ -27,9 +28,9 @@ def call(body) {
 		            sh "echo 'shell scripts to run integration tests...'"
 		        }
 	        }
-	      	stage ('Deploy') {
+	        stage ('Deploy') {
 	            sh "echo 'deploying to server ${config.serverDomain}...'"
-	      	}
+	        }
 	    } catch (err) {
 	        currentBuild.result = 'FAILED'
 	        throw err
