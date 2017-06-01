@@ -33,9 +33,9 @@ def run(Object step){
 }
 
 def execute() {
-    (new SlackPreBuild()).execute()
+//    (new SlackPreBuild()).execute()
 
-    (new SlackPostBuild()).execute()
+  //  (new SlackPostBuild()).execute()
 }
 
 return this;
