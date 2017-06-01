@@ -65,15 +65,17 @@ def call(body) {
             }
         }
     }
+}
 
     void setBuildStatus(String message, String state) {
         step([
             $class: "GitHubCommitStatusSetter",
             //contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "${env.BUILD_CONTEXT}"],
             errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
-            statusResultSource: [$class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]]]
+            statusResultSource: [$class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state$
         ]);
     }
+
 
     def dockerExecute(String executable, String command) {
         switch("${executable}") {
@@ -89,4 +91,4 @@ def call(body) {
         }
         sh "docker exec -u jenkins ${BUILD_ID_UNIQUE}_php ${executable} ${command} ${color}"
     }
-}
+
