@@ -33,8 +33,6 @@ def run(Object step){
 def execute() {
     (new SlackPreBuild()).execute()
 
-    echo "Testing class..."
-
     (new SlackPostBuild()).execute()
 }
 
