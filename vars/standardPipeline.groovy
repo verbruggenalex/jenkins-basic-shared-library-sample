@@ -38,6 +38,7 @@ def call(body) {
 
             try {
                 stage('Check') {
+                    sh "docker logs ${env.BUILD_ID_UNIQUE}_php"
                     dockerExecute('./ssk/phing', 'setup-php-codesniffer')
                     dockerExecute('./ssk/phpcs', 'lib/')
                 }
