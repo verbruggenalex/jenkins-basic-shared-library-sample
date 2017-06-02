@@ -33,6 +33,7 @@ def call(body) {
                 slackSend color: "good", message: "Subsite build ${buildLink} started."
                 sh "mkdir -p ${WORKSPACE}/platform"
                 sh "docker-compose -f ${WORKSPACE}/vendor/ec-europa/ssk/resources/docker/docker-compose.yml up -d"
+                sh "sleep 5"
              }
 
             try {
